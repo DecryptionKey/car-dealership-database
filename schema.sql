@@ -266,7 +266,7 @@ GRANT SELECT ON bmw_inventory, used_inventory, new_inventory, top_customers,
 GRANT EXECUTE ON FUNCTION register_sale, after_car_sold TO owner_role;
 
 -- Owner can grant and take privileges
-ALTER ROLE owner_role WITH ADMIN OPTION;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO owner_role WITH GRANT OPTION;
 
 
 
